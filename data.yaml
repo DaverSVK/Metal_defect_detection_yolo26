@@ -1,0 +1,18 @@
+# NEU-DET Dataset Configuration for YOLO
+# 6 classes of surface defects on hot-rolled steel strips
+
+# Dataset paths (update these to your local paths)
+path: ./datasets/NEU-DET  # dataset root dir
+train: images/train  # train images (relative to 'path')
+val: images/val  # val images (relative to 'path')
+test: images/test  # test images (optional, relative to 'path')
+
+# Classes
+nc: 6  # number of classes
+names:
+  0: crazing
+  1: inclusion
+  2: patches
+  3: pitted_surface
+  4: rolled-in_scale
+  5: scratches
