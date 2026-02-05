@@ -1,6 +1,6 @@
 """
-YOLO26 Training Script for NEU-DET Metal Defect Detection
-This script trains an Ultralytics YOLO model on the NEU-DET dataset.
+YOLOv8 Training Script for NEU-DET Metal Defect Detection
+This script trains an Ultralytics YOLOv8 model on the NEU-DET dataset.
 """
 
 import argparse
@@ -12,7 +12,7 @@ import torch
 def parse_args():
     """Parse command line arguments."""
     parser = argparse.ArgumentParser(
-        description='Train YOLO26 on NEU-DET Metal Defect Dataset'
+        description='Train YOLOv8 on NEU-DET Metal Defect Dataset'
     )
     parser.add_argument(
         '--data',
@@ -185,7 +185,7 @@ def main():
     
     # Print system information
     print("=" * 60)
-    print("YOLO26 Training - NEU-DET Metal Defect Detection")
+    print("YOLOv8 Training - NEU-DET Metal Defect Detection")
     print("=" * 60)
     print(f"PyTorch version: {torch.__version__}")
     print(f"CUDA available: {torch.cuda.is_available()}")

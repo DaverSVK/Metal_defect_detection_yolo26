@@ -1,5 +1,5 @@
 """
-Advanced Evaluation and Reporting for YOLO26 Metal Defect Detection
+Advanced Evaluation and Reporting for YOLOv8 Metal Defect Detection
 This script provides comprehensive evaluation metrics including:
 - Per-class Precision, Recall, F1-Score
 - mAP50 and mAP50-95
@@ -34,6 +34,9 @@ class YOLOEvaluator:
         self.model = YOLO(model_path)
         self.device = device if device else ('cuda:0' if torch.cuda.is_available() else 'cpu')
         self.model.to(self.device)
+        
+        # Store data path for validation
+        self.data_path = data_path
         
         # Load data configuration
         with open(data_path, 'r') as f:
@@ -593,12 +596,12 @@ class YOLOEvaluator:
         output_dir.mkdir(parents=True, exist_ok=True)
         
         print("\n" + "=" * 60)
-        print("YOLO26 Advanced Evaluation Report")
+        print("YOLOv8 Advanced Evaluation Report")
         print("=" * 60)
         
         # Run standard YOLO validation
         print("\nRunning YOLO validation...")
-        metrics = self.model.val(data=self.data_config, imgsz=640, conf=conf_thresh, iou=iou_thresh)
+        metrics = self.model.val(data=self.data_path, imgsz=640, conf=conf_thresh, iou=iou_thresh)
         
         # Calculate metrics at threshold
         print(f"\nCalculating metrics at conf={conf_thresh}, IoU={iou_thresh}...")
@@ -671,7 +674,7 @@ class YOLOEvaluator:
             json.dump(report, f, indent=2)
         
         # Generate markdown report
-        md_report = f"""# YOLO26 Evaluation Report - NEU-DET Metal Defect Detection
+        md_report = f"""# YOLOv8 Evaluation Report - NEU-DET Metal Defect Detection
 
 ## Evaluation Parameters
 - Confidence Threshold: {conf_thresh}
@@ -728,7 +731,7 @@ class YOLOEvaluator:
 def parse_args():
     """Parse command line arguments."""
     parser = argparse.ArgumentParser(
-        description='Advanced Evaluation for YOLO26 Metal Defect Detection'
+        description='Advanced Evaluation for YOLOv8 Metal Defect Detection'
     )
     parser.add_argument(
         '--weights',
@@ -788,7 +791,7 @@ def main():
     args = parse_args()
     
     print("=" * 60)
-    print("YOLO26 Advanced Evaluation")
+    print("YOLOv8 Advanced Evaluation")
     print("=" * 60)
     print(f"Model: {args.weights}")
     print(f"Data config: {args.data}")

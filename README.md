@@ -1,6 +1,6 @@
-# Metal Defect Detection with YOLO26 on NEU-DET Dataset
+# Metal Defect Detection with YOLOv8 on NEU-DET Dataset
 
-A comprehensive Python project for training and evaluating Ultralytics YOLO models on the NEU-DET (Northeastern University Metal Surface Defect) dataset. This project includes advanced evaluation metrics, real-time video inference with rolling OK/NOK status, and TensorRT export for optimized deployment.
+A comprehensive Python project for training and evaluating Ultralytics YOLOv8 models on the NEU-DET (Northeastern University Metal Surface Defect) dataset. This project includes advanced evaluation metrics, real-time video inference with rolling OK/NOK status, and TensorRT export for optimized deployment.
 
 ## 📋 Table of Contents
 

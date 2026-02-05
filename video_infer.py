@@ -217,7 +217,7 @@ class VideoDefectDetector:
             save_stats: Whether to save detection statistics
         """
         # Open video
-        if isinstance(video_path, int) or video_path.isdigit():
+        if isinstance(video_path, int) or (isinstance(video_path, str) and video_path.isdigit()):
             cap = cv2.VideoCapture(int(video_path))
             video_name = f"camera_{video_path}"
         else:
@@ -414,7 +414,7 @@ def main():
     args = parse_args()
     
     print("=" * 60)
-    print("YOLO26 Video Inference - Rolling OK/NOK Status")
+    print("YOLOv8 Video Inference - Rolling OK/NOK Status")
     print("=" * 60)
     print(f"Model: {args.weights}")
     print(f"Source: {args.source}")

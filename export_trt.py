@@ -1,6 +1,6 @@
 """
-TensorRT Export Script for YOLO26 Metal Defect Detection
-Export trained YOLO model to TensorRT format with FP16 precision for optimized inference.
+TensorRT Export Script for YOLOv8 Metal Defect Detection
+Export trained YOLOv8 model to TensorRT format with FP16 precision for optimized inference.
 """
 
 import argparse
@@ -35,7 +35,7 @@ def export_to_tensorrt(
         Path to exported model
     """
     print("=" * 60)
-    print("YOLO26 TensorRT Export")
+    print("YOLOv8 TensorRT Export")
     print("=" * 60)
     print(f"Model: {model_path}")
     print(f"Image size: {imgsz}")
@@ -203,7 +203,7 @@ def verify_tensorrt_model(engine_path, test_image=None, imgsz=640):
 def parse_args():
     """Parse command line arguments."""
     parser = argparse.ArgumentParser(
-        description='Export YOLO26 Model to TensorRT with FP16 Precision'
+        description='Export YOLOv8 Model to TensorRT with FP16 Precision'
     )
     parser.add_argument(
         '--weights',
