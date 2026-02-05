@@ -1,0 +1,21 @@
+# NEU-DET Metal Surface Defect Dataset Configuration
+# Dataset: NEU-DET (Northeastern University Metal Surface Defect Database)
+# 6 defect classes: Crazing, Inclusion, Patches, Pitted Surface, Rolled-in Scale, Scratches
+
+# Dataset paths (modify according to your setup)
+path: ./datasets/NEU-DET  # dataset root directory
+train: images/train  # train images (relative to 'path')
+val: images/val  # validation images (relative to 'path')
+test: images/test  # test images (optional, relative to 'path')
+
+# Classes
+names:
+  0: crazing
+  1: inclusion
+  2: patches
+  3: pitted_surface
+  4: rolled_in_scale
+  5: scratches
+
+# Number of classes
+nc: 6
